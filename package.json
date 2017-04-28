@@ -8,6 +8,10 @@
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:suresh28/node-todo-api.git"
+  },
   "dependencies": {
     "mongodb": "^2.2.26"
   }
