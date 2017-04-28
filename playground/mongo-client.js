@@ -10,7 +10,7 @@ mongoClient.connect('mongodb://localhost:27017/TodoApp',(err,db)=>{
         
         console.log('Connection successfull');
     
-        db.collection('Todo').insertMany([ {text:'My test1 todo from NoteApp',status:true} ],(err,result)=>{
+        db.collection('Todo').insertMany([ {text:'My test1 todo for NoteApp',status:true} ],(err,result)=>{
 
                 if(err)
                 {
@@ -38,9 +38,18 @@ mongoClient.connect('mongodb://localhost:27017/TodoApp',(err,db)=>{
         console.log(data);
     })
 
+  db.collection('Todo').find().count().then( (count)=>{
+            console.log(`number of records in todo collection before ${count}`);
+    })
+
+
+    //db.collection('Todo').findOneAndDelete({text:'My test1 todo for NoteApp'}).then( (data) => {
+    db.collection('Todo').deleteMany({text:'My test1 todo for NoteApp'}).then( (data) => {
+        console.log('inserted record deleted ',data);
+    })
    
     db.collection('Todo').find().count().then( (count)=>{
-            console.log(`number of records in todo collection is ${count}`);
+            console.log(`number of records in todo collection after ${count}`);
     })
 
       db.close();  
