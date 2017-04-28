@@ -1,0 +1,1 @@
+This project used to create todo application using mongo db
