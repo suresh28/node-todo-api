@@ -13,6 +13,7 @@
     "url": "git@github.com:suresh28/node-todo-api.git"
   },
   "dependencies": {
-    "mongodb": "^2.2.26"
+    "mongodb": "^2.2.26",
+    "mongoose": "^4.9.6"
   }
 }
