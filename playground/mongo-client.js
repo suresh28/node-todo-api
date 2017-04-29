@@ -52,6 +52,38 @@ mongoClient.connect('mongodb://localhost:27017/TodoApp',(err,db)=>{
             console.log(`number of records in todo collection after ${count}`);
     })
 
+
+    db.collection('Todo').findOneAndUpdate(
+        {
+            text:'My Third todo from NoteApp'
+        },
+        {
+            $set:{iscompleted:true}
+        },
+        {
+            returnOriginal:false,
+            upsert:true
+        }
+    ).then( (result) => {
+        console.log(' updated document result ',result);
+    })
+
+db.collection('Users').findOneAndUpdate(
+        {
+            email:'test@gmail.com'
+        },
+        {
+            $inc:{age:+1}
+        },
+        {
+            returnOriginal:false,
+            
+        }
+    ).then( (result) => {
+        console.log(' updated user collection result ',result);
+    })
+
+
       db.close();  
 
     
