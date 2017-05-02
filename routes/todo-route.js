@@ -26,4 +26,23 @@ router.post('/todo', (req,res) => {
    
 })
 
+router.get('/getTodos',(req,res)=>{
+
+console.log(' i m in getTodo router' , req.body);
+
+Todo.find().then( (data)=>{
+    console.log('list of todos ',data);
+    res.status(200).send({
+        data
+    });
+},(err)=>{
+    console.log('error in fetching todo ',err);
+    res.status(400).send(err);
+}).catch((err)=>{
+    console.log('error in connecting todo db',err);
+    res.status(404).send(err);
+})
+
+})
+
 module.exports=router;

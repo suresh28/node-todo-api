@@ -12,6 +12,7 @@ var {Todo} = require('./models/todo-model');
 var todoRoute=require('./routes/todo-route');
 var userRoute=require('./routes/user-route');
 
+
 app.use(bodyParser.json());
 
 app.use('/api',todoRoute);
