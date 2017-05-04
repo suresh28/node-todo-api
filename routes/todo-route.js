@@ -52,6 +52,7 @@ console.log(' i m in getTodo router' , req.params);
 console.log(' i m in getTodo router' , req.params);
 console.log(' i m in getTodo router' , req.params.todoTxt);
 
+// sends the request params back as response
 //res.send(req.params);
 
 if(req.params.cat==='text')
